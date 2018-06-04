@@ -27,7 +27,7 @@ def gcdIter(a, b):
     return gcd
 
 
-def gcdRecur(a, b):
+def gcd(a, b):
     '''
     a, b: positive integers
 
@@ -35,7 +35,6 @@ def gcdRecur(a, b):
     '''
 
     # Your code here
-    gcd = 1
     if (a == b):
         return a
     elif (a == 0):
@@ -44,10 +43,10 @@ def gcdRecur(a, b):
         return a
     else:
         if (a < b):
-            return gcdRecur(a, b-a)
+            return gcd(a, b%a)
         else:
-            return gcdRecur(a-b, b)
+            return gcd(a%b, b)
 
 
 print(gcdIter(153, 108))
-print(gcdRecur(4, 8))
+print(gcd(2, 4))
